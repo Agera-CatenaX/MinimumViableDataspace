@@ -27,7 +27,7 @@ runs:
             with:
               path: ~/.m2
               # .git/FETCH_HEAD contains latest commit ID
-              key: ${{ runner.os }}-m2-${{ hashFiles(runner.temp + '/DataSpaceConnector/.git/FETCH_HEAD') }}
+              key: ${{ runner.os }}-m2-${{ hashFiles('${{ runner.temp }}/DataSpaceConnector/.git/FETCH_HEAD') }}
 
           # Install EDC packages into ~/.m2.
           # This action only runs if the packages could not be restored from the cache.
