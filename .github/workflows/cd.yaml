@@ -5,6 +5,8 @@ on:
     branches: [ main ]
     paths-ignore:
       - 'docs/**'
+env:
+  RESOURCES_PREFIX: agera
 
 # Grant permissions to obtain federated identity credentials
 # see https://docs.github.com/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure
