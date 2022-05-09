@@ -30,8 +30,6 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - name: 'failing step for tests.'
-        run: exit 1
 
       # Checkout MVD code
       - uses: actions/checkout@v2
