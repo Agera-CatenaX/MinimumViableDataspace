@@ -38,7 +38,7 @@ jobs:
       resources_prefix: ${{ needs.SetResourcesPrefix.outputs.resources_prefix }}
 
   Destroy:
-    if: ${{ needs.SetResourcesPrefix.result == 'success' }}
+    if: ${{ needs.SetResourcesPrefix.result == 'success' && always()}}
     uses: ./.github/workflows/destroy.yaml
     needs:
       - SetResourcesPrefix
