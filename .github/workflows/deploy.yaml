@@ -79,7 +79,7 @@ jobs:
       - Matrix
     runs-on: ubuntu-latest
     outputs:
-      ${{ fromJSON(steps.runterraform.outputs) }}
+      ${{ steps.runterraform.outputs }}
       terraform_outputs: ${{ steps.runterraform.outputs }}
 
     strategy:
