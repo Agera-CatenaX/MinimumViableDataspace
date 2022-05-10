@@ -168,7 +168,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo $ {{ needs.Deploy.terraform_outputs }}
+          echo '${{ needs.Deploy.terraform_outputs }}'
       # Checkout MVD code
       - uses: actions/checkout@v2
 
