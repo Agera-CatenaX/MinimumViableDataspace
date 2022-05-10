@@ -79,6 +79,7 @@ jobs:
       - Matrix
     runs-on: ubuntu-latest
     outputs:
+      terraform_outputs: ${{ steps.runterraform.outputs }}
       company1_edc_host: ${{ steps.runterraform.outputs.company1_edc_host }}
       company2_edc_host: ${{ steps.runterraform.outputs.company2_edc_host }}
       company1_key_vault: ${{ steps.runterraform.outputs.company1_key_vault }}
@@ -166,6 +167,8 @@ jobs:
     needs: Deploy
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          echo $ {{ needs.Deploy.terraform_outputs }}
       # Checkout MVD code
       - uses: actions/checkout@v2
 
