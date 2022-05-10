@@ -78,7 +78,9 @@ jobs:
       - Build
       - Matrix
     runs-on: ubuntu-latest
-    outputs: ${{ steps.runterraform.outputs }}
+    outputs:
+      terraform_outputs: ${{ steps.runterraform.outputs }}
+
     strategy:
       matrix: ${{ fromJson(needs.Matrix.outputs.matrix) }}
 
@@ -161,6 +163,7 @@ jobs:
     steps:
       - run: |
           echo '${{ needs.Deploy.outputs.terraform_outputs }}'
+          echo '${{ needs.Deploy.outputs.terraform_outputs.company1_edc_host }}'
       # Checkout MVD code
       - uses: actions/checkout@v2
 
